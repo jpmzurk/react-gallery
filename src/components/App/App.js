@@ -18,6 +18,10 @@ class App extends Component {
     ]
   }
 
+  componentDidMount(){
+    this.getPhotos();
+  }
+
   getPhotos = () => {
     axios.get('/gallery')
     .then(response =>  {
@@ -30,9 +34,26 @@ class App extends Component {
     })
   }
 
-  componentDidMount(){
-      this.getPhotos();
+  putLike = (id) => {
+    axios.put(`/gallery/like/${id}`)
+    .then((response) => {
+        ///declare this particular data as state data! 
+        this.getPhotos();
+    })
+    .catch((error) => {
+        console.log(error)})
   }
+
+  deletePhoto = (id) => {
+    axios.delete(`/gallery/${id}`)
+    .then((response) => {
+        ///declare this particular data as state data! 
+        this.getPhotos();
+    })
+    .catch((error) => {
+        console.log(error)})
+  }
+
   
   render() {
     return (
@@ -41,7 +62,10 @@ class App extends Component {
           <h1 className="App-title">Gallery of my life</h1>
         </header>
         <br/>
-       <GalleryList  galleryList = {this.state.galleryList} deletePhoto = {this.deletePhoto}/>
+       <GalleryList  
+          galleryList = {this.state.galleryList} deletePhoto = {this.deletePhoto} 
+          likeIt = {this.putLike}
+          />
       </div>
     );
   }

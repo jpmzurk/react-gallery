@@ -1,5 +1,5 @@
 const galleryItems = [
-    { id: 1, path: 'images/goat_small.jpg', description: 'Glacier National Park.', likes: 0 },
+    // { id: 1, path: 'images/goat_small.jpg', description: 'Glacier National Park.', likes: 0 },
     { id: 2, path: 'images/IMG_2.jpg', description: 'San Sebastian, Spain', likes: 0 },
     { id: 3, path: 'images/IMG_1315.jpeg', description: 'Lake Superior near IronWood, Michigan', likes: 0 },
     { id: 4, path: 'images/IMG_2102.jpeg', description: 'Idiot smiling at Gulfoss Iceland', likes: 0 },
