@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList'
-// import galleryItems from '~/modules/gallery.data.js'
 
 
 class App extends Component {
@@ -35,9 +34,8 @@ class App extends Component {
   }
 
   putLike = (id) => {
-    axios.put(`/gallery/like/${id}`)
+    axios.put(`/gallery/${id}`)
     .then((response) => {
-        ///declare this particular data as state data! 
         this.getPhotos();
     })
     .catch((error) => {
@@ -47,7 +45,6 @@ class App extends Component {
   deletePhoto = (id) => {
     axios.delete(`/gallery/${id}`)
     .then((response) => {
-        ///declare this particular data as state data! 
         this.getPhotos();
     })
     .catch((error) => {

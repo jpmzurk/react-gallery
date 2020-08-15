@@ -13,8 +13,9 @@ class GalleryItem extends Component {
     }
 
     render() {
-        const { id, path, description, likes} = this.props.photo;
-
+        
+        const { id, path, description, likes } = this.props.photo;
+        
         return (
         
             <div style={div} >
@@ -22,8 +23,8 @@ class GalleryItem extends Component {
                 {this.state.isWords ? <img style={img} src={path} alt={description}/> : <p style={p}> {description}</p>}
                 </div>
                 <div>
-                <button onClick={(event) => this.props.likeIt(id)} > Like </button>
-                <button onClick={(event) => this.props.deletePhoto(id)} > Delete </button>
+                <button onClick={() => this.props.likeIt(id)} > Like </button>
+                <button onClick={() => this.props.deletePhoto(id)} > Delete </button>
                 </div>
                 <p> {likes} people like this photo</p>
             </div>
