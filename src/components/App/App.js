@@ -56,13 +56,14 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my life</h1>
+          <h1 className="App-title">Gallery of my travels</h1>
         </header>
         <br/>
-       <GalleryList  
-          galleryList = {this.state.galleryList} deletePhoto = {this.deletePhoto} 
-          likeIt = {this.putLike}
-          />
+            <GalleryList  
+            galleryList = {this.state.galleryList} deletePhoto = {this.deletePhoto} 
+            likeIt = {this.putLike}
+            />
+        
       </div>
     );
   }

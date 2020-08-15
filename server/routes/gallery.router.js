@@ -47,8 +47,6 @@ router.put('/:id', (req, res) => {
         });
 });
 
-
-
 router.delete('/:id', (req, res) => {
     let id = req.params.id;
     console.log('server is deleting task', id);
