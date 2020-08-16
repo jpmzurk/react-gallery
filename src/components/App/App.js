@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList'
+import AddGalleryItem from '../AddGalleryItem/AddGalleryItem';
 
 
 class App extends Component {
@@ -33,6 +34,18 @@ class App extends Component {
     })
   }
 
+  addPhoto = (newPhoto) => {
+    console.log(newPhoto);
+    // POST your data here
+    axios.post('/gallery', newPhoto)
+    .then((response) => {
+      this.getPhotos();
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+
+
   putLike = (id) => {
     axios.put(`/gallery/${id}`)
     .then((response) => {
@@ -58,6 +71,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Gallery of my travels</h1>
         </header>
+        <AddGalleryItem addPhoto = {this.addPhoto}/>
         <br/>
             <GalleryList  
             galleryList = {this.state.galleryList} deletePhoto = {this.deletePhoto} 

@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     let photo = req.body;
-    console.log('posting', photos);
+    console.log('posting', photo);
 
     let queryText = `INSERT INTO "photos" ("path", "description")
                     VALUES ($1, $2);`

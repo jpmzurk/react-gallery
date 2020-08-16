@@ -54,15 +54,15 @@ const useStyles = makeStyles((theme) => ({
                     />
                     <CardContent>
                         <Typography gutterBottom variant="body2" component="p">
-                            <div>
+                          
                             {props.photo.likes} people like this photo
-                            </div>
+                          
                         </Typography>
                     </CardContent>
                     </CardActionArea>
                     <CardActions>
                             <Button size="small" color="primary" onClick={() => props.likeIt(props.photo.id)} > Like </Button>
-                            <Button size="small" variant="contained" color="primary" onClick={() => props.deletePhoto(props.phtoto.id)} > Delete </Button>
+                            <Button size="small" color="secondary" onClick={() => props.deletePhoto(props.photo.id)} > Delete </Button>
                     </CardActions>
                         <IconButton
                             className= {clsx(classes.expand, {

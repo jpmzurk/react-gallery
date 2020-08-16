@@ -5,11 +5,10 @@ import Grid from '@material-ui/core/Grid'
 class GalleryList extends Component {
     render() {
         console.log(this.props.galleryList);
-        
         return (
             <div>
                 <Grid container>
-                <Grid item xs={10}>
+                <Grid item xs={12}>
                 {this.props.galleryList.map(photo => {
                     return <GalleryItem 
                                 style={{margin : '3em'}}
@@ -24,7 +23,6 @@ class GalleryList extends Component {
         );
     }
 }
-
 
 
 export default GalleryList;
