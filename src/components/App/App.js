@@ -69,7 +69,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of my travels</h1>
+          <h1 className="App-title">Gallery of Travels</h1>
         </header>
         <AddGalleryItem addPhoto = {this.addPhoto}/>
         <br/>
